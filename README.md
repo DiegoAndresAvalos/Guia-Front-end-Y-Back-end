@@ -1,4 +1,4 @@
-# Guía profesional de Front-end con Git y GitHub
+# Guía para Front-end con Git y GitHub
 
 Documento académico y técnico diseñado como material de referencia completo para estudiantes de desarrollo Front-end. Este texto cubre fundamentos, buenas prácticas, flujo de trabajo real con GitHub y criterios profesionales utilizados en proyectos de la industria.
 
