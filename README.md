@@ -1,381 +1,307 @@
-# Guía para proyectos Front-end y Back-end
+# Guía profesional de Front-end con Git y GitHub
 
-Documento de referencia académica para estudiantes de programación. Este material está diseñado para ser utilizado como apoyo permanente durante el desarrollo de proyectos, tanto individuales como grupales, siguiendo estándares profesionales usados en la industria.
+Documento académico y técnico diseñado como material de referencia completo para estudiantes de desarrollo Front-end. Este texto cubre fundamentos, buenas prácticas, flujo de trabajo real con GitHub y criterios profesionales utilizados en proyectos de la industria.
 
 ---
 
 ## Índice
 
-* [1. Introducción](#1-introducción)
-* [2. Estructura profesional del repositorio](#2-estructura-profesional-del-repositorio)
-* [3. Control de versiones con Git y GitHub](#3-control-de-versiones-con-git-y-github)
-* [4. Convención de commits (Conventional Commits)](#4-convención-de-commits-conventional-commits)
-* [5. Tipos de commits y ejemplos](#5-tipos-de-commits-y-ejemplos)
-* [6. Flujo de commits en proyectos Front-end](#6-flujo-de-commits-en-proyectos-front-end)
-* [7. Flujo de commits en proyectos Back-end](#7-flujo-de-commits-en-proyectos-back-end)
-* [8. Uso de scopes en commits](#8-uso-de-scopes-en-commits)
-* [9. Cambios importantes (BREAKING CHANGE)](#9-cambios-importantes-breaking-change)
-* [10. Fundamentos y ayudas para Front-end](#10-fundamentos-y-ayudas-para-front-end)
-* [11. Fundamentos y ayudas para Back-end](#11-fundamentos-y-ayudas-para-back-end)
-* [12. Flujo de trabajo con ramas](#12-flujo-de-trabajo-con-ramas)
-* [13. Buenas prácticas para Pull Requests](#13-buenas-prácticas-para-pull-requests)
-* [14. Comandos esenciales de Git](#14-comandos-esenciales-de-git)
-* [15. Ejemplos profesionales de commits](#15-ejemplos-profesionales-de-commits)
-* [16. Recomendaciones finales](#16-recomendaciones-finales)
+* [1. Introducción al desarrollo Front-end profesional](#1-introducción-al-desarrollo-front-end-profesional)
+* [2. Rol del Front-end en un proyecto de software](#2-rol-del-front-end-en-un-proyecto-de-software)
+* [3. Estructura profesional de un proyecto Front-end](#3-estructura-profesional-de-un-proyecto-front-end)
+* [4. Fundamentos esenciales de Front-end](#4-fundamentos-esenciales-de-front-end)
+* [5. Arquitectura Front-end y separación de responsabilidades](#5-arquitectura-front-end-y-separación-de-responsabilidades)
+* [6. Manejo del estado y flujo de datos](#6-manejo-del-estado-y-flujo-de-datos)
+* [7. Consumo de APIs y comunicación con Back-end](#7-consumo-de-apis-y-comunicación-con-back-end)
+* [8. Manejo de errores, estados y experiencia de usuario](#8-manejo-de-errores-estados-y-experiencia-de-usuario)
+* [9. Rendimiento y optimización en Front-end](#9-rendimiento-y-optimización-en-front-end)
+* [10. Accesibilidad y buenas prácticas de UI](#10-accesibilidad-y-buenas-prácticas-de-ui)
+* [11. Testing en Front-end](#11-testing-en-front-end)
+* [12. Git y GitHub aplicados a proyectos Front-end](#12-git-y-github-aplicados-a-proyectos-front-end)
+* [13. Convención de commits para Front-end](#13-convención-de-commits-para-front-end)
+* [14. Tipos de commits Front-end con ejemplos](#14-tipos-de-commits-front-end-con-ejemplos)
+* [15. Flujo real de commits en un proyecto Front-end](#15-flujo-real-de-commits-en-un-proyecto-front-end)
+* [16. Flujo de trabajo con ramas](#16-flujo-de-trabajo-con-ramas)
+* [17. Pull Requests en proyectos Front-end](#17-pull-requests-en-proyectos-front-end)
+* [18. Errores comunes en Front-end y cómo evitarlos](#18-errores-comunes-en-front-end-y-cómo-evitarlos)
+* [19. Checklist profesional antes de entregar un proyecto](#19-checklist-profesional-antes-de-entregar-un-proyecto)
+* [20. Recomendaciones finales](#20-recomendaciones-finales)
 
 ---
 
-## 1. Introducción
+## 1. Introducción al desarrollo Front-end profesional
 
-En el desarrollo de software profesional, no basta con que el código funcione. Es fundamental que el proyecto sea entendible, mantenible y escalable. Esta guía busca enseñar a los estudiantes a trabajar como lo harían en un entorno real de trabajo.
+El desarrollo Front-end no consiste únicamente en "hacer que se vea bonito". Un Front-end profesional es mantenible, escalable, accesible y está preparado para crecer junto con el producto.
 
-Aquí se abordan:
-
-* Organización correcta de proyectos
-* Uso profesional de Git y GitHub
-* Escritura de commits claros y útiles
-* Separación y fundamentos de Front-end y Back-end
+Este documento busca formar criterios técnicos sólidos, no solo enseñar herramientas.
 
 ---
 
-## 2. Estructura profesional del repositorio
+## 2. Rol del Front-end en un proyecto de software
 
-Una estructura clara permite que cualquier persona pueda entender el proyecto sin explicaciones adicionales.
+El Front-end es responsable de:
+
+* La interacción directa con el usuario
+* La representación visual del estado del sistema
+* La comunicación con el Back-end mediante APIs
+* La experiencia de usuario (UX)
+
+Un mal Front-end puede arruinar un buen Back-end.
+
+---
+
+## 3. Estructura profesional de un proyecto Front-end
 
 ```text
 /frontend
   /src
+    /assets
+    /components
+    /pages
+    /services
+    /styles
+    /utils
+    main.js | index.js
   /public
   package.json
   README.md
-
-/backend
-  /src
-  /tests
-  package.json | requirements.txt
-  README.md
-
-/docs
-  arquitectura.md
-  endpoints.md
-  modelo-datos.md
-
-.gitignore
-README.md
 ```
+
+Principios:
+
+* Componentes pequeños y reutilizables
+* Separar lógica, vista y servicios
+* Evitar carpetas genéricas sin criterio
+
+---
+
+## 4. Fundamentos esenciales de Front-end
+
+Todo desarrollador Front-end debe dominar:
+
+* HTML semántico
+* CSS moderno (flexbox, grid, responsive design)
+* JavaScript moderno (ES6+)
+* Manejo del DOM
+* Asincronía (promises, async/await)
+
+Antes de usar frameworks, entender la base.
+
+---
+
+## 5. Arquitectura Front-end y separación de responsabilidades
 
 Buenas prácticas:
 
-* Front-end y Back-end deben poder ejecutarse por separado.
-* Cada carpeta debe tener su propio README.
-* Los contratos entre Front-end y Back-end deben estar documentados.
+* Componentes: solo UI
+* Servicios: llamadas a API
+* Utils: funciones reutilizables
+* Pages: composición de componentes
+
+Evitar:
+
+* Lógica compleja en componentes visuales
+* Llamadas a API dispersas
 
 ---
 
-## 3. Control de versiones con Git y GitHub
+## 6. Manejo del estado y flujo de datos
 
-Git permite llevar un historial de cambios. GitHub permite colaboración, revisión de código y control del proyecto.
+Conceptos clave:
 
-Principios clave:
+* El estado es la fuente de verdad
+* El UI depende del estado
+* Evitar estados duplicados
 
-* Commits pequeños y frecuentes.
-* Nunca subir código roto a la rama principal.
-* Cada commit debe explicar claramente qué se hizo.
+Errores comunes:
+
+* Actualizar el DOM manualmente
+* Estados inconsistentes
 
 ---
 
-## 4. Convención de commits (Conventional Commits)
+## 7. Consumo de APIs y comunicación con Back-end
 
-Formato estándar:
+Buenas prácticas:
+
+* Centralizar llamadas HTTP
+* Manejar errores de red
+* Validar respuestas
+
+Estados típicos:
+
+* loading
+* success
+* error
+* empty
+
+---
+
+## 8. Manejo de errores, estados y experiencia de usuario
+
+Nunca asumir:
+
+* Que la API responde rápido
+* Que siempre hay datos
+* Que no hay errores
+
+Siempre mostrar feedback al usuario.
+
+---
+
+## 9. Rendimiento y optimización en Front-end
+
+Buenas prácticas:
+
+* Evitar renders innecesarios
+* Lazy loading
+* Optimizar imágenes
+* Minimizar dependencias
+
+El rendimiento es parte de la experiencia.
+
+---
+
+## 10. Accesibilidad y buenas prácticas de UI
+
+Principios básicos:
+
+* HTML semántico
+* Contraste adecuado
+* Navegación por teclado
+* Textos alternativos
+
+Accesibilidad no es opcional.
+
+---
+
+## 11. Testing en Front-end
+
+Tipos de pruebas:
+
+* Unitarias
+* De componentes
+* De integración
+
+Probar lógica crítica y flujos principales.
+
+---
+
+## 12. Git y GitHub aplicados a proyectos Front-end
+
+Git permite:
+
+* Historial claro
+* Trabajo en equipo
+* Reversión segura de cambios
+
+GitHub añade:
+
+* Pull Requests
+* Revisiones
+* Issues
+
+---
+
+## 13. Convención de commits para Front-end
+
+Formato:
 
 ```text
-type(scope opcional): mensaje breve en presente
+type(scope): mensaje claro
 ```
 
 Ejemplo:
 
 ```text
-feat(auth): add login with JWT
+feat(ui): add login form
 ```
-
-Ventajas:
-
-* Historial legible
-* Facilita revisiones
-* Permite automatizar versiones
 
 ---
 
-## 5. Tipos de commits y ejemplos
-
-### feat
-
-Nueva funcionalidad.
+## 14. Tipos de commits Front-end con ejemplos
 
 ```text
 feat(frontend): add dashboard page
-```
-
-### fix
-
-Corrección de errores.
-
-```text
-fix(api): handle null user response
-```
-
-### docs
-
-Cambios de documentación.
-
-```text
-docs(readme): update setup instructions
-```
-
-### style
-
-Cambios de formato sin modificar lógica.
-
-```text
-style(frontend): format code with prettier
-```
-
-### refactor
-
-Reorganización del código sin cambiar comportamiento.
-
-```text
-refactor(service): extract validation logic
-```
-
-### perf
-
-Mejoras de rendimiento.
-
-```text
-perf(db): add index to users table
-```
-
-### test
-
-Pruebas.
-
-```text
-test(api): add authentication tests
-```
-
-### build
-
-Configuración o dependencias.
-
-```text
-build(frontend): update build config
-```
-
-### ci
-
-Integración continua.
-
-```text
-ci: add github actions workflow
-```
-
-### chore
-
-Mantenimiento.
-
-```text
-chore: update gitignore
-```
-
-### revert
-
-Revertir commits.
-
-```text
-revert: revert "feat(api): add payments"
+fix(ui): handle empty state
+refactor(components): split navbar
+style(frontend): format with prettier
+test(frontend): add login tests
+build(frontend): configure env vars
+docs(frontend): update readme
 ```
 
 ---
 
-## 6. Flujo de commits en proyectos Front-end
-
-Ejemplo realista:
+## 15. Flujo real de commits en un proyecto Front-end
 
 ```text
-build(frontend): setup project structure
-feat(frontend): add routing and layout
-feat(ui): implement login form
+build(frontend): setup project
+feat(frontend): add base layout
+feat(ui): implement login
 fix(ui): handle invalid credentials
-refactor(components): split large components
+refactor(components): simplify form
 test(frontend): add unit tests
 ```
 
 ---
 
-## 7. Flujo de commits en proyectos Back-end
-
-Ejemplo realista:
-
-```text
-build(backend): setup server base
-feat(api): add authentication endpoints
-feat(db): create initial schema
-fix(auth): validate token expiration
-perf(db): optimize frequent queries
-test(api): add integration tests
-```
-
----
-
-## 8. Uso de scopes en commits
-
-El scope indica la parte afectada del proyecto.
-
-Front-end:
-
-* frontend
-* ui
-* components
-* pages
-* state
-
-Back-end:
-
-* backend
-* api
-* auth
-* db
-* service
-
-Ejemplo:
-
-```text
-feat(api): create user profile endpoint
-```
-
----
-
-## 9. Cambios importantes (BREAKING CHANGE)
-
-Se utilizan cuando un cambio rompe compatibilidad.
-
-```text
-feat(api): change user response format
-
-BREAKING CHANGE: /users now returns data.user
-```
-
----
-
-## 10. Fundamentos y ayudas para Front-end
-
-Conceptos esenciales:
-
-* Componentes con responsabilidad única.
-* Estado como única fuente de verdad.
-* Separar lógica de presentación.
-
-Checklist mental:
-
-* Manejar loading, error y empty states.
-* No asumir datos válidos.
-* Evitar componentes demasiado grandes.
-
----
-
-## 11. Fundamentos y ayudas para Back-end
-
-Conceptos esenciales:
-
-* Arquitectura por capas.
-* Validación de datos.
-* Manejo correcto de errores.
-* Seguridad básica.
-
-Checklist mental:
-
-* Respuestas consistentes.
-* Uso correcto de códigos HTTP.
-* Logs útiles para depuración.
-
----
-
-## 12. Flujo de trabajo con ramas
+## 16. Flujo de trabajo con ramas
 
 Ramas recomendadas:
 
 * main
-* develop (opcional)
 * feature/nombre
 * fix/nombre
 
-Buenas prácticas:
-
-* Una funcionalidad por rama.
-* Pull Requests pequeños.
+Nunca trabajar directamente en main.
 
 ---
 
-## 13. Buenas prácticas para Pull Requests
+## 17. Pull Requests en proyectos Front-end
 
-Un Pull Request debe incluir:
+Un PR debe incluir:
 
-* Qué se hizo.
-* Por qué se hizo.
-* Cómo probarlo.
-* Riesgos si existen.
-
----
-
-## 14. Comandos esenciales de Git
-
-```text
-git status
-git log --oneline
-git checkout -b feature/nombre
-git add .
-git commit -m "feat: mensaje claro"
-git push -u origin feature/nombre
-```
+* Descripción clara
+* Capturas de pantalla si aplica
+* Pasos para probar
 
 ---
 
-## 15. Ejemplos profesionales de commits
+## 18. Errores comunes en Front-end y cómo evitarlos
 
-Front-end:
+Errores frecuentes:
 
-```text
-feat(ui): add responsive navbar
-fix(frontend): prevent crash on empty list
-refactor(components): extract modal logic
-```
+* Componentes gigantes
+* Estados mal gestionados
+* No manejar errores
+* Commits confusos
 
-Back-end:
-
-```text
-feat(api): add health check endpoint
-fix(auth): handle invalid token
-perf(db): add index to orders table
-```
+Solución: orden y disciplina.
 
 ---
 
-## 16. Recomendaciones finales
+## 19. Checklist profesional antes de entregar un proyecto
 
-Un proyecto profesional no solo funciona: se entiende, se mantiene y evoluciona.
-
-El uso correcto de commits, estructura clara y fundamentos sólidos distingue un proyecto académico común de uno con nivel profesional.
-
-Este documento debe ser consultado durante todo el desarrollo del proyecto.
+* El proyecto corre sin errores
+* No hay console.log innecesarios
+* Commits claros
+* Código legible
+* README actualizado
 
 ---
 
-## Autor
+## 20. Recomendaciones finales
 
-Documento elaborado por  
-Diego Avalos  
+Un buen Front-end se construye con fundamentos sólidos, estructura clara y control del proceso.
 
-Material de apoyo para estudiantes de programación.  
-Uso académico y educativo.
+Este documento debe servir como guía permanente durante cualquier proyecto Front-end.
 
+---
+
+## Autor y derechos de uso
+
+Autor: Diego Avalos
+
+Documento elaborado con fines educativos.
+Uso libre para proyectos académicos, citando la fuente.
