@@ -368,3 +368,14 @@ Un proyecto profesional no solo funciona: se entiende, se mantiene y evoluciona.
 El uso correcto de commits, estructura clara y fundamentos sólidos distingue un proyecto académico común de uno con nivel profesional.
 
 Este documento debe ser consultado durante todo el desarrollo del proyecto.
+
+---
+
+## Autor
+
+Documento elaborado por  
+Diego Avalos  
+
+Material de apoyo para estudiantes de programación.  
+Uso académico y educativo.
+
