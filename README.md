@@ -1,4 +1,4 @@
-# Guía profesional para el desarrollo de proyectos Front-end y Back-end
+# Guía proyectos Front-end y Back-end
 
 Documento de referencia académica para estudiantes de programación. Este material está diseñado para ser utilizado como apoyo permanente durante el desarrollo de proyectos, tanto individuales como grupales, siguiendo estándares profesionales usados en la industria.
 
